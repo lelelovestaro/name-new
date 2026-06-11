@@ -14,10 +14,10 @@ cakepops = 1.25
 cakes_with_sprinkles = 2.25
 
 string = 'Welcome to the bakery! We have fresh fruit pastries and new items every Monday. All fruit drinks are ' + str(prices) + ' dollars each!'
-
+print("-----")
 string_2 = ' We also have school/office supplies sponsored by Hello Kitty\'s Art and Craft shop! All items are buy one get one free! Addtionally, We have cake pops for sale for ' + str(cakepops) + ', and cakes with sprinkles for ' + str(cakes_with_sprinkles) + '!' 
 print(string + string_2)
-
+print("-----")
 
 
 cakes = "raspberry lemon ice box", "coconut lime", "carmel cake", 'strawberry shortcake'
@@ -41,12 +41,8 @@ cake_with_cherries = lambda cakes: [cake + " with cherries" for cake in cakes]
 #print("how does the lambda work in cake_with_cherries is that it takes each cake in the cakes list and adds the string "+"with cherries"+" to it, creating a new list of cakes that now have cherries as part of their description."+"The lambda function is a concise way to define this operation without needing to write a full function definition.")
 #print(list(cake_with_cherries(cakes)))
 
-order = input("What would you like to order? ").lower()
-print("Thank you for your order of " + order + "! We will have it ready for you shortly.")
-
-
-inventory = [len(cakes) + len(fruit)]
-if list(inventory) <= 0:
-    print("We are sorry, but we are currently out of stock for that item.")
-else:
-    print("Thank you for your purchase!") 
+order = input("What would you like to order? ").lower() in cakes or cake_with_cherries(cakes) or fruit or Supplies
+print(list(cakes))
+print(list(cake_with_cherries(cakes)))
+if input("What would you like to order? ").lower() in Supplies:
+    print("Thank you for your order of " + order + "! We will have it ready for you shortly.")
