@@ -1,19 +1,16 @@
-fruit = ['mangos' ,'guava', 'lemon', 'cucumber', 'berries', 'coconut']
+fruit = "mangos" ,"guava", "lemon", "cucumber", "berries", "coconut" 
 
 string = 'Welcome to the bakery! We have fresh fruit pastries and new items every Monday.'
 
 cakes = "raspberry lemon ice box", "coconut lime", "carmel cake", 'strawberry shortcake'
 
-cherry_cakes = lambda cakes: list(cakes)
-
-kind_fruits = lambda fruit: list(fruit)
-order_two = input("What flavor of cake would you like to order? ").upper()
+print(str(cakes))
+order_two = input("What flavor of cake would you like to order? ").lower()
 if order_two in cakes:
-        print(input("Would you like to add fruit to your cake for an additional 50 cents? "))
-        if input("Would you like to add fruit to your cake for an additional 50 cents? ").upper() == "yes":
-            print(input("What kind of fruits would you like to add to your cake?")).upper() in fruit
-            print(list(kind_fruits(fruit)))
-            print("Great! We will add fruit to your " + order_two + " cake for an additional 50 cents.")
+        if input("Would you like to add fruit to your cake for an additional 50 cents? ").lower() == "yes":
+            print(fruit)
+            new_fruit = input("What kind of fruit would you like to add to your cake? ").lower()
+            print("Great! We will add " + new_fruit + " to your " + order_two + " cake for an additional 50 cents.")
         else:
             print("No problem! We will prepare your " + order_two + " cake without fruit.")
 else:
