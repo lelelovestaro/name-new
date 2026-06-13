@@ -7,7 +7,7 @@ cakes = "raspberry lemon ice box", "coconut lime", "carmel cake", 'strawberry sh
 print(str(cakes))
 order_two = input("What flavor of cake would you like to order? ").lower()
 if order_two in cakes:
-        if input("Would you like to add fruit to your cake for an additional 50 cents? ").lower() == "yes":
+        if input("Would you like to add fruit to your cake for an additional 50 cents? ").lower() == "yes" or "sure":
             print(fruit)
             new_fruit = input("What kind of fruit would you like to add to your cake? ").lower()
             print("Great! We will add " + new_fruit + " to your " + order_two + " cake for an additional 50 cents.")
