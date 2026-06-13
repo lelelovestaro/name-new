@@ -1,4 +1,4 @@
-
+#holder
 Supplies = ['pencil', 'paper', 'folder', 'journal', 'eraser', 'pen']
 
 fruit = ['mangos' ,'guava', 'lemon', 'cucumber', 'berries', 'coconut']
@@ -24,25 +24,14 @@ cakes = "raspberry lemon ice box", "coconut lime", "carmel cake", 'strawberry sh
 cherry_cakes = lambda cakes: list(cakes)
 print(cherry_cakes(cakes))
 kind_fruits = lambda fruit: list(fruit)
-order_two = input("What flavor of cake would you like to order? ").upper()
-if input("What flavor of cake would you like to order? ").upper() in order_two:
-    if input(cakes):
+order_two = input("What flavor of cake would you like to order? ").upper() in cakes
+if order_two in cakes:
         print(input("Would you like to add fruit to your cake for an additional 50 cents? "))
     if input("Would you like to add fruit to your cake for an additional 50 cents? ").upper() == "yes":
-        print(input("What kind of  " + list(kind_fruits) + " would you like to add to your cake? "))
+        print(input("What kind of fruits would you like to add to your cake? ")).upper() in fruit:
+        print(list(kind_fruits(fruit)))
         print("Great! We will add fruit to your " + order_two + " cake for an additional 50 cents.")
     else:
         print("No problem! We will prepare your " + order_two + " cake without fruit.")
         
-for orders in order_two:
-    print(orders + order_two)
-# how to make a lambda function for a beginner using the cakes line and wanting to add cherries to it in the loop using lambda function
-cake_with_cherries = lambda cakes: [cake + " with cherries" for cake in cakes]
-#print("how does the lambda work in cake_with_cherries is that it takes each cake in the cakes list and adds the string "+"with cherries"+" to it, creating a new list of cakes that now have cherries as part of their description."+"The lambda function is a concise way to define this operation without needing to write a full function definition.")
-#print(list(cake_with_cherries(cakes)))
-
-order = input("What would you like to order? ").lower() in cakes or cake_with_cherries(cakes) or fruit or Supplies
-print(list(cakes))
-print(list(cake_with_cherries(cakes)))
-if input("What would you like to order? ").lower() in Supplies:
-    print("Thank you for your order of " + order + "! We will have it ready for you shortly.")
+print("Thank you for ordering at Lele\'s Sweets & Treats!")
